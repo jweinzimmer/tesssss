@@ -1,8 +1,7 @@
-# Don't change this file!
-# Configure your app in config/environment.rb and config/environments/*.rb
+# Set up gems listed in the Gemfile.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
-RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
-
+require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 module Rails
   class << self
     def boot!
